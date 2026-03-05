@@ -13,22 +13,22 @@
 
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg, #1d2671, #c33764);
+            background: linear-gradient(135deg, #0f2027, #2c5364); /* тёмно-синий → бирюзовый */
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
+            color: #f0f8ff;
             padding: 20px;
         }
 
         .container {
             width: 100%;
             max-width: 450px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(15px);
             border-radius: 25px;
             padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
             animation: fadeIn 1s ease;
         }
 
@@ -40,7 +40,7 @@
         h1 {
             font-size: 36px;
             margin-bottom: 10px;
-            color: #ffd166;
+            color: #4fd1c5; /* мятный */
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
@@ -48,7 +48,7 @@
             font-size: 24px;
             margin-bottom: 30px;
             text-align: center;
-            color: #fff;
+            color: #b2f5ea; /* светло-голубой */
         }
 
         .form-group {
@@ -60,7 +60,7 @@
             margin-bottom: 8px;
             font-weight: 500;
             font-size: 16px;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(242, 255, 254, 0.9);
         }
 
         .form-control {
@@ -68,8 +68,8 @@
             padding: 15px 20px;
             border: none;
             border-radius: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            color: #333;
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a202c;
             font-size: 16px;
             transition: all 0.3s ease;
         }
@@ -77,7 +77,7 @@
         .form-control:focus {
             outline: none;
             background: white;
-            box-shadow: 0 0 0 3px rgba(255, 209, 102, 0.5);
+            box-shadow: 0 0 0 3px rgba(79, 209, 197, 0.5);
         }
 
         .form-control::placeholder {
@@ -89,8 +89,8 @@
             padding: 18px;
             border: none;
             border-radius: 15px;
-            background: linear-gradient(to right, #ffd166, #ffb347);
-            color: #1d2671;
+            background: linear-gradient(to right, #4fd1c5, #81e6d9); /* мятный → голубой */
+            color: #0f2027;
             font-size: 20px;
             font-weight: 600;
             cursor: pointer;
@@ -103,7 +103,7 @@
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(to right, #ffda7f, #ffc166);
+            background: linear-gradient(to right, #6ee7b7, #b2f5ea); /* светлый градиент при наведении */
         }
 
         .links {
@@ -115,7 +115,7 @@
         }
 
         .links a {
-            color: #ffd166;
+            color: #4fd1c5;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -125,8 +125,8 @@
 
         .links a:hover {
             text-decoration: underline;
-            color: #ffda7f;
-            background: rgba(255, 255, 255, 0.1);
+            color: #81e6d9;
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .messages {
@@ -137,39 +137,39 @@
             padding: 15px;
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.9);
-            color: #c33764;
+            color: #e53e3e; /* красный для ошибок */
             font-weight: 500;
             text-align: center;
             animation: slideIn 0.5s ease;
-            border-left: 4px solid #c33764;
+            border-left: 4px solid #e53e3e;
         }
 
         .alert-success {
-            background: rgba(40, 167, 69, 0.9);
+            background: rgba(72, 187, 120, 0.9);
             color: white;
-            border-left-color: #28a745;
+            border-left-color: #48bb78;
         }
 
         .alert-info {
-            background: rgba(23, 162, 184, 0.9);
+            background: rgba(56, 178, 172, 0.9);
             color: white;
-            border-left-color: #17a2b8;
+            border-left-color: #38b2ac;
         }
 
         .alert-warning {
-            background: rgba(255, 193, 7, 0.9);
-            color: #333;
-            border-left-color: #ffc107;
+            background: rgba(236, 201, 75, 0.9);
+            color: #1a202c;
+            border-left-color: #ecc94b;
         }
 
         .error-message {
             margin-top: 5px;
-            color: #ff6b6b;
+            color: #fc8181;
             font-size: 14px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             padding: 8px 15px;
             border-radius: 8px;
-            border-left: 4px solid #ff6b6b;
+            border-left: 4px solid #fc8181;
         }
 
         .remember-me {
@@ -177,13 +177,13 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(242, 255, 254, 0.9);
         }
 
         .remember-me input[type="checkbox"] {
             width: 18px;
             height: 18px;
-            accent-color: #ffd166;
+            accent-color: #4fd1c5;
             cursor: pointer;
         }
 
@@ -208,75 +208,46 @@
         .back-link {
             display: inline-block;
             margin-top: 20px;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(242, 255, 254, 0.8);
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .back-link:hover {
-            color: #ffd166;
+            color: #4fd1c5;
             transform: translateX(-3px);
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes shake {
-            0%, 100% { transform: translateX(0); }
+            0%,100% { transform: translateX(0); }
             25% { transform: translateX(-5px); }
             75% { transform: translateX(5px); }
         }
 
-        .shake {
-            animation: shake 0.5s ease-in-out;
-        }
+        .shake { animation: shake 0.5s ease-in-out; }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            h1 {
-                font-size: 28px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-
-            .form-control {
-                padding: 12px 15px;
-            }
-
-            .btn {
-                padding: 16px;
-                font-size: 18px;
-            }
+            .container { padding: 30px 20px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 20px; }
+            .form-control { padding: 12px 15px; }
+            .btn { padding: 16px; font-size: 18px; }
         }
 
         .features {
             margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .feature {
@@ -284,14 +255,11 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 10px;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(242, 255, 254, 0.8);
             font-size: 14px;
         }
 
-        .feature-icon {
-            color: #ffd166;
-            font-size: 16px;
-        }
+        .feature-icon { color: #4fd1c5; font-size: 16px; }
     </style>
 </head>
 <body>
@@ -334,7 +302,6 @@
 
         <form method="POST" action="{% url 'login' %}">
             {% csrf_token %}
-
             <input type="hidden" name="next" value="{{ next }}">
 
             <div class="form-group">
@@ -343,9 +310,7 @@
                        placeholder="Введите логин или email" autocomplete="username"
                        value="{{ form.username.value|default:'' }}">
                 {% if form.username.errors %}
-                <div class="error-message">
-                    {{ form.username.errors }}
-                </div>
+                <div class="error-message">{{ form.username.errors }}</div>
                 {% endif %}
             </div>
 
@@ -357,9 +322,7 @@
                     <span class="toggle-icon" onclick="togglePassword()">👁️</span>
                 </div>
                 {% if form.password.errors %}
-                <div class="error-message">
-                    {{ form.password.errors }}
-                </div>
+                <div class="error-message">{{ form.password.errors }}</div>
                 {% endif %}
             </div>
 
@@ -368,9 +331,7 @@
                 <label for="id_remember">Запомнить меня</label>
             </div>
 
-            <button type="submit" class="btn" id="login-btn">
-                🔑 Войти в систему
-            </button>
+            <button type="submit" class="btn" id="login-btn">🔑 Войти в систему</button>
         </form>
 
         <div class="links">
@@ -394,7 +355,7 @@
         <div style="background: white; padding: 30px; border-radius: 15px; max-width: 400px; width: 90%;">
             <h3 style="color: #333; margin-bottom: 20px;">Восстановление пароля</h3>
             <p style="color: #666; margin-bottom: 20px;">Для восстановления пароля обратитесь к администратору системы.</p>
-            <button onclick="hidePasswordReset()" style="padding: 10px 20px; background: #c33764; color: white; border: none; border-radius: 10px; cursor: pointer;">Закрыть</button>
+            <button onclick="hidePasswordReset()" style="padding: 10px 20px; background: #4fd1c5; color: white; border: none; border-radius: 10px; cursor: pointer;">Закрыть</button>
         </div>
     </div>
 
@@ -402,7 +363,6 @@
         function togglePassword() {
             const passwordInput = document.getElementById('id_password');
             const toggleIcon = document.querySelector('.toggle-icon');
-
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
                 toggleIcon.textContent = '👁️‍🗨️';
@@ -412,53 +372,32 @@
             }
         }
 
-        function showPasswordReset() {
-            document.getElementById('password-reset-modal').style.display = 'flex';
-        }
-
-        function hidePasswordReset() {
-            document.getElementById('password-reset-modal').style.display = 'none';
-        }
+        function showPasswordReset() { document.getElementById('password-reset-modal').style.display = 'flex'; }
+        function hidePasswordReset() { document.getElementById('password-reset-modal').style.display = 'none'; }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Автофокус на поле логина
             const usernameInput = document.getElementById('id_username');
-            if (usernameInput) {
-                usernameInput.focus();
-            }
+            if (usernameInput) usernameInput.focus();
 
-            // Анимация кнопки при ошибке
             const form = document.querySelector('form');
             const loginBtn = document.getElementById('login-btn');
 
             form.addEventListener('submit', function(e) {
-                // Если есть ошибки, добавить анимацию
                 if (document.querySelector('.alert-warning')) {
                     loginBtn.classList.add('shake');
-                    setTimeout(() => {
-                        loginBtn.classList.remove('shake');
-                    }, 500);
+                    setTimeout(() => { loginBtn.classList.remove('shake'); }, 500);
                 }
             });
 
-            // Закрытие модального окна по клику вне его
             const modal = document.getElementById('password-reset-modal');
             modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    hidePasswordReset();
-                }
+                if (e.target === modal) hidePasswordReset();
             });
 
-            // Сохранение логина в localStorage
             const rememberCheckbox = document.getElementById('id_remember');
             const savedUsername = localStorage.getItem('remembered_username');
+            if (savedUsername && usernameInput) { usernameInput.value = savedUsername; rememberCheckbox.checked = true; }
 
-            if (savedUsername && usernameInput) {
-                usernameInput.value = savedUsername;
-                rememberCheckbox.checked = true;
-            }
-
-            // При отправке формы сохраняем логин если чекбокс отмечен
             form.addEventListener('submit', function() {
                 if (rememberCheckbox.checked && usernameInput.value) {
                     localStorage.setItem('remembered_username', usernameInput.value);
@@ -467,29 +406,16 @@
                 }
             });
 
-            // Показ/скрытие пароля по Ctrl+H
             document.addEventListener('keydown', function(e) {
-                if (e.ctrlKey && e.key === 'h') {
-                    e.preventDefault();
-                    togglePassword();
-                }
+                if (e.ctrlKey && e.key === 'h') { e.preventDefault(); togglePassword(); }
             });
         });
 
-        // Автозаполнение демо-данных для тестирования
         function fillDemoCredentials(role) {
             const usernameInput = document.getElementById('id_username');
             const passwordInput = document.getElementById('id_password');
-
-            if (role === 'student') {
-                usernameInput.value = 'ivanov_student';
-                passwordInput.value = 'student123';
-            } else if (role === 'teacher') {
-                usernameInput.value = 'petrov_teacher';
-                passwordInput.value = 'teacher123';
-            }
-
-            // Фокус на пароле после заполнения
+            if (role === 'student') { usernameInput.value = 'ivanov_student'; passwordInput.value = 'student123'; }
+            else if (role === 'teacher') { usernameInput.value = 'petrov_teacher'; passwordInput.value = 'teacher123'; }
             passwordInput.focus();
         }
     </script>

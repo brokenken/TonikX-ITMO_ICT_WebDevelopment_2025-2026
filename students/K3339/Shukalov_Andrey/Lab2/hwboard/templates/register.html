@@ -13,22 +13,22 @@
 
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg, #1d2671, #c33764);
+            background: linear-gradient(135deg, #0f2027, #2c5364);
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
+            color: #f0f8ff;
             padding: 20px;
         }
 
         .container {
             width: 100%;
             max-width: 600px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(15px);
             border-radius: 25px;
             padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
             animation: fadeIn 1s ease;
         }
 
@@ -40,15 +40,15 @@
         h1 {
             font-size: 36px;
             margin-bottom: 10px;
-            color: #ffd166;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            color: #4fd1c5;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
         h2 {
             font-size: 24px;
             margin-bottom: 30px;
             text-align: center;
-            color: #fff;
+            color: #b2f5ea;
         }
 
         .form-group {
@@ -60,7 +60,7 @@
             margin-bottom: 8px;
             font-weight: 500;
             font-size: 16px;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(242, 255, 254, 0.9);
         }
 
         .form-control {
@@ -68,8 +68,8 @@
             padding: 15px 20px;
             border: none;
             border-radius: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            color: #333;
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a202c;
             font-size: 16px;
             transition: all 0.3s ease;
         }
@@ -77,7 +77,7 @@
         .form-control:focus {
             outline: none;
             background: white;
-            box-shadow: 0 0 0 3px rgba(255, 209, 102, 0.5);
+            box-shadow: 0 0 0 3px rgba(79,209,197,0.5);
         }
 
         .form-control::placeholder {
@@ -89,8 +89,8 @@
             padding: 18px;
             border: none;
             border-radius: 15px;
-            background: linear-gradient(to right, #ffd166, #ffb347);
-            color: #1d2671;
+            background: linear-gradient(to right, #4fd1c5, #81e6d9);
+            color: #0f2027;
             font-size: 20px;
             font-weight: 600;
             cursor: pointer;
@@ -102,8 +102,8 @@
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(to right, #ffda7f, #ffc166);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background: linear-gradient(to right, #6ee7b7, #b2f5ea);
         }
 
         .login-link {
@@ -113,7 +113,7 @@
         }
 
         .login-link a {
-            color: #ffd166;
+            color: #4fd1c5;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
@@ -121,7 +121,7 @@
 
         .login-link a:hover {
             text-decoration: underline;
-            color: #ffda7f;
+            color: #81e6d9;
         }
 
         .messages {
@@ -132,26 +132,26 @@
             padding: 15px;
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.9);
-            color: #c33764;
+            color: #e53e3e;
             font-weight: 500;
             text-align: center;
             animation: slideIn 0.5s ease;
         }
 
         .alert-success {
-            background: rgba(40, 167, 69, 0.9);
+            background: rgba(72,187,120,0.9);
             color: white;
         }
 
         .errorlist {
             list-style-type: none;
             margin-top: 5px;
-            color: #ff6b6b;
+            color: #fc8181;
             font-size: 14px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             padding: 8px 15px;
             border-radius: 8px;
-            border-left: 4px solid #ff6b6b;
+            border-left: 4px solid #fc8181;
         }
 
         .role-select {
@@ -172,34 +172,35 @@
         .role-label {
             display: block;
             padding: 15px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.08);
             border: 2px solid transparent;
             border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 500;
+            color: #f0f8ff;
         }
 
         .role-label:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.15);
         }
 
         .role-option input[type="radio"]:checked + .role-label {
-            background: rgba(255, 209, 102, 0.3);
-            border-color: #ffd166;
-            color: #ffd166;
+            background: rgba(79,209,197,0.3);
+            border-color: #4fd1c5;
+            color: #4fd1c5;
         }
 
         .back-link {
             display: inline-block;
             margin-top: 20px;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(242, 255, 254, 0.8);
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .back-link:hover {
-            color: #ffd166;
+            color: #4fd1c5;
             transform: translateX(-3px);
         }
 
@@ -208,7 +209,7 @@
             border-radius: 15px;
             padding: 20px;
             margin-top: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255,255,255,0.1);
             animation: fadeIn 0.5s ease;
         }
 
@@ -216,7 +217,7 @@
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 15px;
-            color: #ffd166;
+            color: #4fd1c5;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -224,7 +225,7 @@
 
         .optional {
             font-size: 14px;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255,255,255,0.6);
             font-weight: normal;
         }
 
@@ -239,59 +240,17 @@
             margin-bottom: 0;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        @keyframes fadeIn { from {opacity:0; transform: translateY(10px);} to {opacity:1; transform:translateY(0);} }
+        @keyframes slideIn { from {opacity:0; transform:translateX(-20px);} to {opacity:1; transform:translateX(0);} }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            h1 {
-                font-size: 28px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-
-            .form-control {
-                padding: 12px 15px;
-            }
-
-            .btn {
-                padding: 16px;
-                font-size: 18px;
-            }
-
-            .role-select {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .form-row {
-                flex-direction: column;
-                gap: 15px;
-            }
+        @media (max-width:768px) {
+            .container { padding:30px 20px; }
+            h1 { font-size:28px; }
+            h2 { font-size:20px; }
+            .form-control { padding:12px 15px; }
+            .btn { padding:16px; font-size:18px; }
+            .role-select { flex-direction: column; gap:10px; }
+            .form-row { flex-direction: column; gap:15px; }
         }
     </style>
 </head>
@@ -307,9 +266,7 @@
         {% if messages %}
         <div class="messages">
             {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-            </div>
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
             {% endfor %}
         </div>
         {% endif %}
@@ -317,40 +274,17 @@
         <form method="POST" action="">
             {% csrf_token %}
 
-            <!-- Сообщения об ошибках формы -->
-            {% if form.non_field_errors %}
-            <div class="errorlist">
-                {% for error in form.non_field_errors %}
-                <div>{{ error }}</div>
-                {% endfor %}
-            </div>
-            {% endif %}
-
             <!-- Основные поля -->
             <div class="form-group">
                 <label for="id_username" class="form-label">Имя пользователя *</label>
                 <input type="text" name="username" class="form-control" required id="id_username"
                        placeholder="Придумайте логин" autocomplete="username">
-                {% if form.username.errors %}
-                <div class="errorlist">
-                    {% for error in form.username.errors %}
-                    <div>{{ error }}</div>
-                    {% endfor %}
-                </div>
-                {% endif %}
             </div>
 
             <div class="form-group">
                 <label for="id_email" class="form-label">Электронная почта *</label>
                 <input type="email" name="email" class="form-control" required id="id_email"
                        placeholder="example@school.ru" autocomplete="email">
-                {% if form.email.errors %}
-                <div class="errorlist">
-                    {% for error in form.email.errors %}
-                    <div>{{ error }}</div>
-                    {% endfor %}
-                </div>
-                {% endif %}
             </div>
 
             <div class="form-row">
@@ -358,26 +292,11 @@
                     <label for="id_first_name" class="form-label">Имя *</label>
                     <input type="text" name="first_name" class="form-control" required id="id_first_name"
                            placeholder="Иван" autocomplete="given-name">
-                    {% if form.first_name.errors %}
-                    <div class="errorlist">
-                        {% for error in form.first_name.errors %}
-                        <div>{{ error }}</div>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
                 </div>
-
                 <div class="form-group">
                     <label for="id_last_name" class="form-label">Фамилия *</label>
                     <input type="text" name="last_name" class="form-control" required id="id_last_name"
                            placeholder="Иванов" autocomplete="family-name">
-                    {% if form.last_name.errors %}
-                    <div class="errorlist">
-                        {% for error in form.last_name.errors %}
-                        <div>{{ error }}</div>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
                 </div>
             </div>
 
@@ -385,13 +304,6 @@
                 <label for="id_patronymic" class="form-label">Отчество</label>
                 <input type="text" name="patronymic" class="form-control" id="id_patronymic"
                        placeholder="Иванович">
-                {% if form.patronymic.errors %}
-                <div class="errorlist">
-                    {% for error in form.patronymic.errors %}
-                    <div>{{ error }}</div>
-                    {% endfor %}
-                </div>
-                {% endif %}
             </div>
 
             <!-- Выбор роли -->
@@ -409,21 +321,11 @@
                         <label for="id_role_teacher" class="role-label">👨‍🏫 Преподаватель</label>
                     </div>
                 </div>
-                {% if form.role.errors %}
-                <div class="errorlist">
-                    {% for error in form.role.errors %}
-                    <div>{{ error }}</div>
-                    {% endfor %}
-                </div>
-                {% endif %}
             </div>
 
-            <!-- ДИНАМИЧЕСКИЕ ПОЛЯ ДЛЯ УЧЕНИКА -->
+            <!-- Динамические поля -->
             <div id="student-fields" class="dynamic-fields">
-                <div class="fields-header">
-                    📚 Информация об ученике
-                </div>
-
+                <div class="fields-header">📚 Информация об ученике</div>
                 <div class="form-group">
                     <label for="id_class" class="form-label">Класс *</label>
                     <select name="class_name" class="form-control" required id="id_class">
@@ -444,8 +346,6 @@
                         <option value="11Б">11Б</option>
                     </select>
                 </div>
-
-
                 <div class="form-group">
                     <label for="id_admission_year" class="form-label">Год поступления</label>
                     <input type="number" name="admission_year" class="form-control" id="id_admission_year"
@@ -453,18 +353,13 @@
                 </div>
             </div>
 
-            <!-- ДИНАМИЧЕСКИЕ ПОЛЯ ДЛЯ ПРЕПОДАВАТЕЛЯ -->
-            <div id="teacher-fields" class="dynamic-fields" style="display: none;">
-                <div class="fields-header">
-                    👨‍🏫 Информация о преподавателе
-                </div>
-
+            <div id="teacher-fields" class="dynamic-fields" style="display:none;">
+                <div class="fields-header">👨‍🏫 Информация о преподавателе</div>
                 <div class="form-group">
                     <label for="id_subject" class="form-label">Предмет *</label>
                     <input type="text" name="subject" class="form-control" id="id_subject"
                            placeholder="Например: Математика">
                 </div>
-
                 <div class="form-row">
                     <div class="form-group">
                         <label for="id_education" class="form-label">Образование *</label>
@@ -476,28 +371,19 @@
                             <option value="doctor">Доктор наук</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="id_experience" class="form-label">Стаж (лет) *</label>
                         <input type="number" name="experience" class="form-control" id="id_experience"
                                placeholder="5" min="0" max="50">
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label for="id_teacher_code" class="form-label">Код преподавателя *</label>
                     <input type="text" name="teacher_code" class="form-control" id="id_teacher_code"
                            placeholder="Уникальный код">
-                    <small style="color: rgba(255, 255, 255, 0.7); display: block; margin-top: 5px;">
+                    <small style="color: rgba(255,255,255,0.7); display:block; margin-top:5px;">
                         Выдается администрацией школы
                     </small>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">
-                        <input type="checkbox" name="is_class_teacher" id="id_is_class_teacher">
-                        Является классным руководителем
-                    </label>
                 </div>
             </div>
 
@@ -507,35 +393,18 @@
                     <label for="id_password1" class="form-label">Пароль *</label>
                     <input type="password" name="password1" class="form-control" required id="id_password1"
                            placeholder="Придумайте пароль" autocomplete="new-password">
-                    {% if form.password1.errors %}
-                    <div class="errorlist">
-                        {% for error in form.password1.errors %}
-                        <div>{{ error }}</div>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-                    <small style="color: rgba(255, 255, 255, 0.7); font-size: 14px; display: block; margin-top: 5px;">
+                    <small style="color: rgba(255,255,255,0.7); font-size:14px; display:block; margin-top:5px;">
                         Минимум 8 символов
                     </small>
                 </div>
-
                 <div class="form-group">
                     <label for="id_password2" class="form-label">Повторите пароль *</label>
                     <input type="password" name="password2" class="form-control" required id="id_password2"
                            placeholder="Повторите пароль" autocomplete="new-password">
-                    {% if form.password2.errors %}
-                    <div class="errorlist">
-                        {% for error in form.password2.errors %}
-                        <div>{{ error }}</div>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
                 </div>
             </div>
 
-            <button type="submit" class="btn">
-                📝 Зарегистрироваться
-            </button>
+            <button type="submit" class="btn">📝 Зарегистрироваться</button>
         </form>
 
         <div class="login-link">
@@ -551,132 +420,21 @@
             const studentFields = document.getElementById('student-fields');
             const teacherFields = document.getElementById('teacher-fields');
 
-            // Поля ученика
-            const classField = document.getElementById('id_class');
-            const parentPhoneField = document.getElementById('id_parent_phone');
-            const admissionYearField = document.getElementById('id_admission_year');
-
-            // Поля преподавателя
-            const subjectField = document.getElementById('id_subject');
-            const educationField = document.getElementById('id_education');
-            const experienceField = document.getElementById('id_experience');
-            const teacherCodeField = document.getElementById('id_teacher_code');
-
-            if (role === 'student') {
-                // Показать поля ученика
-                studentFields.style.display = 'block';
-                studentFields.style.animation = 'fadeIn 0.5s ease';
-
-                // Скрыть поля преподавателя
-                teacherFields.style.display = 'none';
-
-                // Сделать поля ученика обязательными
-                if (classField) classField.required = true;
-                if (parentPhoneField) parentPhoneField.required = false;
-                if (admissionYearField) admissionYearField.required = false;
-
-                // Сделать поля преподавателя необязательными
-                if (subjectField) subjectField.required = false;
-                if (educationField) educationField.required = false;
-                if (experienceField) experienceField.required = false;
-                if (teacherCodeField) teacherCodeField.required = false;
+            if(role === 'student'){
+                studentFields.style.display='block';
+                studentFields.style.animation='fadeIn 0.5s ease';
+                teacherFields.style.display='none';
             } else {
-                // Показать поля преподавателя
-                teacherFields.style.display = 'block';
-                teacherFields.style.animation = 'fadeIn 0.5s ease';
-
-                // Скрыть поля ученика
-                studentFields.style.display = 'none';
-
-                // Сделать поля преподавателя обязательными
-                if (subjectField) subjectField.required = true;
-                if (educationField) educationField.required = true;
-                if (experienceField) experienceField.required = true;
-                if (teacherCodeField) teacherCodeField.required = true;
-
-                // Сделать поля ученика необязательными
-                if (classField) classField.required = false;
-                if (parentPhoneField) parentPhoneField.required = false;
-                if (admissionYearField) admissionYearField.required = false;
+                teacherFields.style.display='block';
+                teacherFields.style.animation='fadeIn 0.5s ease';
+                studentFields.style.display='none';
             }
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Инициализация полей
             toggleFields();
-
-            // Автофокус на первое поле
             const firstInput = document.querySelector('input:not([type="hidden"]):not([type="radio"])');
-            if (firstInput) {
-                firstInput.focus();
-            }
-
-            // Маска для телефона
-            const phoneInput = document.getElementById('id_phone');
-            const parentPhoneInput = document.getElementById('id_parent_phone');
-
-            function formatPhone(value) {
-                let x = value.replace(/\D/g, '');
-                if (x.length > 0) {
-                    if (x[0] !== '7' && x[0] !== '8') {
-                        x = '7' + x;
-                    }
-                    if (x.length > 1) {
-                        x = '+7 (' + x.substring(1, 4);
-                    }
-                    if (x.length > 7) {
-                        x += ') ' + x.substring(7, 10);
-                    }
-                    if (x.length > 12) {
-                        x += '-' + x.substring(12, 14);
-                    }
-                    if (x.length > 15) {
-                        x += '-' + x.substring(15, 17);
-                    }
-                }
-                return x;
-            }
-
-            if (phoneInput) {
-                phoneInput.addEventListener('input', function(e) {
-                    e.target.value = formatPhone(e.target.value);
-                });
-            }
-
-            if (parentPhoneInput) {
-                parentPhoneInput.addEventListener('input', function(e) {
-                    e.target.value = formatPhone(e.target.value);
-                });
-            }
-
-            // Валидация пароля
-            const password1 = document.getElementById('id_password1');
-            const password2 = document.getElementById('id_password2');
-
-            function validatePasswords() {
-                if (password1.value && password2.value && password1.value !== password2.value) {
-                    password2.style.boxShadow = '0 0 0 3px rgba(255, 107, 107, 0.5)';
-                } else {
-                    password2.style.boxShadow = '';
-                }
-            }
-
-            if (password1 && password2) {
-                password1.addEventListener('input', validatePasswords);
-                password2.addEventListener('input', validatePasswords);
-            }
-
-            // Автоматический год поступления для учеников
-            const admissionYearField = document.getElementById('id_admission_year');
-            if (admissionYearField && !admissionYearField.value) {
-                admissionYearField.value = new Date().getFullYear();
-            }
-
-            // Автоматический стаж для преподавателей
-            const experienceField = document.getElementById('id_experience');
-            if (experienceField && !experienceField.value) {
-                experienceField.value = 0;
-            }
+            if(firstInput) firstInput.focus();
         });
     </script>
 </body>
