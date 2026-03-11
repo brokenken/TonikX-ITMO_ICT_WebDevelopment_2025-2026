@@ -1,15 +1,18 @@
+from django.utils import timezone
+from datetime import datetime
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from .serializers import *
 from .models import Room, Client, Employee, CleaningSchedule
+from django.db.models import Q
+from datetime import date
 
 
 class RoomViewSet(viewsets.ModelViewSet):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
-
     @action(detail=False, methods=['get'])
     def room_history(self, request):
         room_number = request.query_params.get('room_number')
@@ -31,20 +34,40 @@ class RoomViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['get'])
     def free_rooms(self, request):
-        start_date = request.query_params.get('start')
-        end_date = request.query_params.get('end')
-
-        if not all([start_date, end_date]):
+        start_date_str = request.query_params.get('start')
+        end_date_str = request.query_params.get('end')
+        if not start_date_str or not end_date_str:
             return Response({'error': 'start and end are required'}, status=400)
-
+        try:
+            start_date = datetime.strptime(start_date_str, "%Y-%m-%d").date()
+            end_date = datetime.strptime(end_date_str, "%Y-%m-%d").date()
+        except ValueError:
+            return Response({'error': 'Invalid date format. Use YYYY-MM-DD.'}, status=400)
         booked_room_ids = Client.objects.filter(
+            room__isnull=False,
             check_in_date__lte=end_date,
             check_out_date__gte=start_date
         ).values_list('room_id', flat=True)
+        free_rooms = Room.objects.exclude(id__in=booked_room_ids)
+        serializer = RoomSerializer(free_rooms, many=True)
+        return Response(serializer.data)
 
-        free_rooms_count = Room.objects.exclude(id__in=booked_room_ids).count()
-        return Response({'free_rooms': free_rooms_count})
-
+    @action(detail=False, methods=['get'])
+    def status(self, request):
+        rooms = Room.objects.all()
+        result = []
+        for room in rooms:
+            room_data = RoomSerializer(room).data
+            today = timezone.now().date()
+            occupied = Client.objects.filter(
+                room=room,
+                check_in_date__lte=today,
+            ).filter(
+                Q(check_out_date__gte=today) | Q(check_out_date__isnull=True)
+            ).exists()
+            room_data['free'] = not occupied
+            result.append(room_data)
+        return Response(result)
 
 class ClientViewSet(viewsets.ModelViewSet):
     queryset = Client.objects.all()
@@ -74,6 +97,15 @@ class ClientViewSet(viewsets.ModelViewSet):
             'client': ClientSerializer(client).data,
             'same_clients': ClientSerializer(overlapping_clients, many=True).data
         })
+    @action(detail=True, methods=['post'])
+    def checkout(self, request, pk=None):
+        client = get_object_or_404(Client, pk=pk)
+
+        client.check_out_date = timezone.now().date()
+        client.room = None
+        client.save()
+
+        return Response({'status': 'client checked out'})
 
 
 class EmployeeViewSet(viewsets.ModelViewSet):

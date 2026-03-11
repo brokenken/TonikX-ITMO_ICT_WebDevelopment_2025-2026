@@ -2,8 +2,11 @@
   <v-container>
     <v-container>
       <h1>Гости</h1>
-      <v-btn v-if="!addingClient" @click="addingClient = true" color="primary">Заселить клиента</v-btn>
+      <v-btn v-if="!addingClient" @click="addingClient = true" color="primary">
+        Заселить клиента
+      </v-btn>
     </v-container>
+
     <v-container>
       <v-form @submit.prevent="addClient" v-if="addingClient">
         <v-text-field
@@ -18,8 +21,19 @@
         <v-text-field v-model="newClient.last_name" label="Фамилия" required></v-text-field>
         <v-text-field v-model="newClient.middle_name" label="Отчество" required></v-text-field>
         <v-text-field v-model="newClient.city_of_origin" label="Город" required></v-text-field>
-        <v-text-field v-model="newClient.check_in_date" label="Дата заезда" type="date" required></v-text-field>
-        <v-text-field v-model="newClient.check_out_date" label="Дата выезда" type="date" required></v-text-field>
+
+        <v-text-field
+          v-model="newClient.check_in_date"
+          label="Дата заезда"
+          type="date"
+        ></v-text-field>
+
+        <v-text-field
+          v-model="newClient.check_out_date"
+          label="Дата выезда"
+          type="date"
+        ></v-text-field>
+
         <v-select
           v-model="newClient.room"
           :items="availableRooms"
@@ -27,11 +41,14 @@
           item-title="number"
           label="Выберите свободную комнату"
           required
+          :disabled="availableRooms.length === 0"
         ></v-select>
+
         <v-btn color="primary" type="submit">Добавить</v-btn>
         <v-btn @click="addingClient = false" color="secondary">Отмена</v-btn>
       </v-form>
     </v-container>
+
     <v-row>
       <v-col v-for="client in clients" :key="client.id" cols="12" md="4">
         <ClientCard :client="client" />
@@ -41,13 +58,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import axios from 'axios';
 import ClientCard from '@/components/ClientCard.vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-
 const clients = ref([]);
 const addingClient = ref(false);
 
@@ -59,14 +75,15 @@ const newClient = ref({
   city_of_origin: '',
   check_in_date: null,
   check_out_date: null,
-  room_number: null,
   room: null,
 });
 
+const availableRooms = ref([]);
+
 const fetchClients = async () => {
   try {
-    const responce = await axios.get('/api/clients/');
-    clients.value = responce.data;
+    const response = await axios.get('/api/clients/');
+    clients.value = response.data;
   } catch (error) {
     console.error('Ошибка при получении списка клиентов', error);
   }
@@ -82,12 +99,21 @@ const addClient = async () => {
       city_of_origin: newClient.value.city_of_origin,
       check_in_date: newClient.value.check_in_date,
       check_out_date: newClient.value.check_out_date,
-      room_number: newClient.value.room_number,
       room: newClient.value.room,
     });
     alert('Клиент добавлен');
-    newClient.value = {};
+    newClient.value = {
+      passport_number: '',
+      first_name: '',
+      last_name: '',
+      middle_name: '',
+      city_of_origin: '',
+      check_in_date: null,
+      check_out_date: null,
+      room: null,
+    };
     fetchClients();
+    availableRooms.value = [];
     router.go();
   } catch (error) {
     console.error('Ошибка при добавлении клиента', error);
@@ -95,18 +121,31 @@ const addClient = async () => {
   }
 };
 
-const availableRooms = ref([]);
 const fetchAvailableRooms = async () => {
+  const start = newClient.value.check_in_date;
+  const end = newClient.value.check_out_date;
+
+  if (!start || !end) return;
+
   try {
-    const response = await axios.get('/api/rooms/available_rooms/');
+    const response = await axios.get('/api/rooms/free_rooms/', {
+      params: { start, end },
+    });
     availableRooms.value = response.data;
   } catch (error) {
     console.error('Ошибка при получении данных о комнатах:', error);
+    availableRooms.value = [];
   }
 };
 
+watch(
+  () => [newClient.value.check_in_date, newClient.value.check_out_date],
+  ([start, end]) => {
+    if (start && end) fetchAvailableRooms();
+  }
+);
+
 onMounted(() => {
   fetchClients();
-  fetchAvailableRooms();
 });
 </script>

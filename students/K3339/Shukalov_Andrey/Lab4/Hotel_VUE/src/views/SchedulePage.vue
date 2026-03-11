@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <ScheduleCard v-for="day in 7" :key="day" :day="day" :schedules="getSchedules(day)" :employees="employees" />
+    <ScheduleCard :schedules="schedules" :employees="employees" />
   </v-container>
 </template>
 
@@ -14,12 +14,7 @@ const employees = ref([]);
 
 const load = async () => {
   schedules.value = (await axios.get('/api/cleaning_schedules/')).data;
-
   employees.value = (await axios.get('/api/Employees/')).data;
-};
-
-const getSchedules = (day) => {
-  return schedules.value.filter((s) => s.day_of_week == day);
 };
 
 onMounted(load);

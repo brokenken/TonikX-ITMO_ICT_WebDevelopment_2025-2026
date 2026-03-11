@@ -10,3 +10,5 @@ theme:
   language: ru
   features:
     - toc.integrate: false
+repo_url: https://github.com/brokenken/TonikX-ITMO_ICT_WebDevelopment_2025-2026.git
+repo_name: GitHub

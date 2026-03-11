@@ -1,11 +1,20 @@
 from rest_framework import serializers
 from .models import Room, Client, Employee, CleaningSchedule
+from django.utils import timezone
 
 class RoomSerializer(serializers.ModelSerializer):
-
+    free = serializers.SerializerMethodField()
     class Meta:
         model = Room
-        fields = '__all__'
+        fields = ['id', 'number', 'price', 'room_type', 'floor', 'phone', 'free']
+
+    def get_free(self, obj):
+        today = timezone.now().date()
+        return not Client.objects.filter(
+            room=obj,
+            check_in_date__lte=today,
+            check_out_date__gte=today
+        ).exists()
 
 
 class ClientSerializer(serializers.ModelSerializer):

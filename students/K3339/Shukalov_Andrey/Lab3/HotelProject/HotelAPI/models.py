@@ -10,7 +10,7 @@ class Room(models.Model):
 
     number = models.PositiveIntegerField(unique=True, verbose_name=_('Номер комнаты'))
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('Стоимость за сутки'))
-    room_type = models.CharField(max_length=10, choices=RoomType.choices, verbose_name=_("Тип номера"))
+    room_type = models.CharField(max_length=10, choices=RoomType, verbose_name=_("Тип номера"))
     floor = models.PositiveIntegerField(validators=[MinValueValidator(1)], verbose_name=_('Этаж'))
     phone = models.CharField(max_length=15, verbose_name=_('Телефон'))
 
@@ -19,7 +19,7 @@ class Room(models.Model):
         verbose_name_plural = _('Комнаты')
 
     def __str__(self):
-        return f"{_('Комната')} {self.number} ({self.get_room_type_display()})"
+        return f"{_('Комната')} {self.number} ({self.room_type})"
 
 
 class Person(models.Model):
@@ -40,7 +40,14 @@ class Client(Person):
     city_of_origin = models.CharField(max_length=100, verbose_name=_("Город проживания"))
     check_in_date = models.DateField(verbose_name=_("Дата заезда"))
     check_out_date = models.DateField(verbose_name=_('Дата выезда'), null=True, blank=True)
-    room = models.ForeignKey(Room, on_delete=models.PROTECT, related_name="clients", verbose_name=_("Номер"))
+    room = models.ForeignKey(
+        Room,
+        on_delete=models.PROTECT,
+        related_name="clients",
+        verbose_name=_("Номер"),
+        null=True,
+        blank=True
+    )
 
     class Meta:
         unique_together = ('passport_number', 'check_in_date')

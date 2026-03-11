@@ -23,7 +23,7 @@
         <p>Паспорт: {{ client.passport_number }}</p>
         <p>Город: {{ client.city_of_origin }}</p>
         <p>Дата заезда: {{ client.check_in_date }}</p>
-        <p>Дата уезда: {{ client.check_out_date }}</p>
+        <p>Дата выезда: {{ client.check_out_date }}</p>
         <p>Номер: {{ client.room }}</p>
       </v-card-text>
       <v-card-text v-else v-show="show">

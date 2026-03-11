@@ -46,23 +46,16 @@ const newRoom = ref({
   price: '',
   room_type: '',
   floor: '',
-  free: true,
   phone: '',
 });
-const roomType = ref(['single', 'tuple', 'triple']);
+const roomType = ref(['single', 'double', 'triple']);
 
 const addRoom = async () => {
   try {
-    await axios.post('http://localhost:8000/api/rooms/', {
-      number: newRoom.value.number,
-      price: newRoom.value.price,
-      room_type: newRoom.value.room_type,
-      floor: newRoom.value.floor,
-      free: newRoom.value.free,
-      phone: newRoom.value.phone,
-    });
+    await axios.post('http://localhost:8000/api/rooms/', newRoom.value);
     alert('Номер добавлен');
     addingRoom.value = false;
+    newRoom.value = { number: '', price: '', room_type: '', floor: '', phone: '' };
     fetchRooms();
   } catch (error) {
     console.error('Ошибка при добавлении комнаты', error);
@@ -73,6 +66,6 @@ const addRoom = async () => {
 onMounted(() => {
   fetchRooms();
 });
-</script>
 
+</script>
 <style scoped></style>
